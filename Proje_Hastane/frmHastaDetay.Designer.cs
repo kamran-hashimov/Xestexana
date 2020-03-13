@@ -303,7 +303,7 @@
             this.MaximizeBox = false;
             this.Name = "frmHastaDetay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HastaDetay";
+            this.Text = "Hasta Detayi";
             this.Load += new System.EventHandler(this.frmHastaDetay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

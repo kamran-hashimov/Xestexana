@@ -37,5 +37,12 @@ namespace Proje_Hastane
             }
             bgl.baglanti().Close();
         }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            frmGirisler frm = new frmGirisler();
+            frm.Show();
+            this.Close();
+        }
     }
 }
