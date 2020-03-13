@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGeri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGirisYap
@@ -105,6 +106,16 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Doktor giris paneli";
             // 
+            // btnGeri
+            // 
+            this.btnGeri.Location = new System.Drawing.Point(57, 149);
+            this.btnGeri.Name = "btnGeri";
+            this.btnGeri.Size = new System.Drawing.Size(77, 30);
+            this.btnGeri.TabIndex = 10;
+            this.btnGeri.Text = "Geri";
+            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
+            // 
             // frmDoktorGiris
             // 
             this.AcceptButton = this.btnGirisYap;
@@ -113,6 +124,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(336, 197);
+            this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.lnkUyeOl);
             this.Controls.Add(this.mstxtKimlikNo);
@@ -139,5 +151,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGeri;
     }
 }

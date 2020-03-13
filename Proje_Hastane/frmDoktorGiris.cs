@@ -23,12 +23,23 @@ namespace Proje_Hastane
             if (dr.Read())
             {
                 frmDoktorDetay frm = new frmDoktorDetay();
+                frm.Tc = mstxtKimlikNo.Text;
+                frm.Ad = dr[1] + " " + dr[2];
                 frm.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Tc ve ya sifre yanlis");
             }
+            bgl.baglanti().Close();
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            frmGirisler frm = new frmGirisler();
+            frm.Show();
+            this.Close();
         }
     }
 }

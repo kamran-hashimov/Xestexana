@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHastaGiris));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,13 +36,14 @@
             this.mskTcNo = new System.Windows.Forms.MaskedTextBox();
             this.lnkUyeOl = new System.Windows.Forms.LinkLabel();
             this.btnGirisYap = new System.Windows.Forms.Button();
+            this.btnGeri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Script", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 9);
+            this.label1.Location = new System.Drawing.Point(22, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 44);
             this.label1.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 72);
+            this.label2.Location = new System.Drawing.Point(27, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 14);
             this.label2.TabIndex = 1;
@@ -61,7 +63,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 105);
+            this.label3.Location = new System.Drawing.Point(65, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 14);
             this.label3.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(126, 102);
+            this.txtSifre.Location = new System.Drawing.Point(126, 89);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(100, 20);
@@ -77,7 +79,7 @@
             // 
             // mskTcNo
             // 
-            this.mskTcNo.Location = new System.Drawing.Point(126, 69);
+            this.mskTcNo.Location = new System.Drawing.Point(126, 56);
             this.mskTcNo.Mask = "00000000000";
             this.mskTcNo.Name = "mskTcNo";
             this.mskTcNo.Size = new System.Drawing.Size(100, 20);
@@ -87,7 +89,7 @@
             // 
             this.lnkUyeOl.AutoSize = true;
             this.lnkUyeOl.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkUyeOl.Location = new System.Drawing.Point(249, 104);
+            this.lnkUyeOl.Location = new System.Drawing.Point(253, 94);
             this.lnkUyeOl.Name = "lnkUyeOl";
             this.lnkUyeOl.Size = new System.Drawing.Size(42, 15);
             this.lnkUyeOl.TabIndex = 4;
@@ -97,13 +99,23 @@
             // 
             // btnGirisYap
             // 
-            this.btnGirisYap.Location = new System.Drawing.Point(149, 128);
+            this.btnGirisYap.Location = new System.Drawing.Point(149, 115);
             this.btnGirisYap.Name = "btnGirisYap";
-            this.btnGirisYap.Size = new System.Drawing.Size(77, 33);
+            this.btnGirisYap.Size = new System.Drawing.Size(77, 30);
             this.btnGirisYap.TabIndex = 3;
             this.btnGirisYap.Text = "Giris yap";
             this.btnGirisYap.UseVisualStyleBackColor = true;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
+            // 
+            // btnGeri
+            // 
+            this.btnGeri.Location = new System.Drawing.Point(68, 115);
+            this.btnGeri.Name = "btnGeri";
+            this.btnGeri.Size = new System.Drawing.Size(77, 30);
+            this.btnGeri.TabIndex = 5;
+            this.btnGeri.Text = "Geri";
+            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
             // 
             // frmHastaGiris
             // 
@@ -113,6 +125,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(325, 177);
+            this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.lnkUyeOl);
             this.Controls.Add(this.mskTcNo);
@@ -120,10 +133,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHastaGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHastaGiris";
+            this.Text = "Hasta Girisi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +153,6 @@
         private System.Windows.Forms.MaskedTextBox mskTcNo;
         private System.Windows.Forms.LinkLabel lnkUyeOl;
         private System.Windows.Forms.Button btnGirisYap;
+        private System.Windows.Forms.Button btnGeri;
     }
 }
