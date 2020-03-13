@@ -136,7 +136,7 @@
             this.MaximizeBox = false;
             this.Name = "frmDoktorGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoktorGiris";
+            this.Text = "Doktor Girisi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
