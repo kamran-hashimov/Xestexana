@@ -22,12 +22,22 @@ namespace Proje_Hastane
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
-        int secilen1;
+        frmSekreterDetay frm = new frmSekreterDetay();
         public int secilen; 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilen1 = dataGridView1.SelectedCells[0].RowIndex;
-            secilen = secilen1;
+            secilen = dataGridView1.SelectedCells[0].RowIndex;
+            frm.id = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
+            frm.Tarih = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
+            frm.Saat = dataGridView1.Rows[secilen].Cells[2].Value.ToString();
+            frm.Brans = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
+            frm.Doktor = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
+            frm.Tc = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
+            
+            this.Hide();
+            frm.Show();
         }
+
+     
     }
 }

@@ -11,12 +11,29 @@ namespace Proje_Hastane
         {
             InitializeComponent();
         }
+
+
         public string TCno;
+        public string id;
+        public string Tarih;
+        public string Saat;
+        public string Brans;
+        public string Doktor;
+        public string Tc;
+
+
         sqlbaglantisi bgl = new sqlbaglantisi();
         private void frmSekreterDetay_Load(object sender, EventArgs e)
         {
-            lblTcNo.Text = TCno;
 
+            txtId.Text = id;
+            mskTarih.Text = Tarih;
+            mskSaat.Text = Saat;
+            cmbBrans.Text = Brans;
+            cmbDoktor.Text = Doktor;
+            mskTc.Text = Tc;
+
+            lblTcNo.Text = TCno;
             //Ad Soyad tasima
             SqlCommand komut1 = new SqlCommand("Select SekreterAdSoyad from Tbl_Sekreter where SekreterTc = @p1", bgl.baglanti());
             komut1.Parameters.AddWithValue("p1", lblTcNo.Text);
@@ -53,31 +70,22 @@ namespace Proje_Hastane
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            SqlCommand komutkaydet = new SqlCommand("insert into Tbl_Randevular (RandevuTarih,RandevuSaat,RandevuBrans,RandevuDoktor) values(@p1,@p2,@p3,@p4)", bgl.baglanti());
+            SqlCommand komutkaydet = new SqlCommand("insert into Tbl_Randevular (RandevuTarih,RandevuSaat,RandevuBrans,RandevuDoktor,HastaTc) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
             komutkaydet.Parameters.AddWithValue("@p1", mskTarih.Text);
             komutkaydet.Parameters.AddWithValue("@p2", mskSaat.Text);
             komutkaydet.Parameters.AddWithValue("@p3", cmbBrans.Text);
             komutkaydet.Parameters.AddWithValue("@p4", cmbDoktor.Text);
+            komutkaydet.Parameters.AddWithValue("@p5", mskTc.Text);
             komutkaydet.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Randevu olusturuldu");
+
+            
         }
 
         private void cmbBrans_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            bgl.baglanti().Open();
-            SqlCommand command = new SqlCommand("select Id from StaffDuties where Position = @p1 ",bgl.baglanti());
-            command.Parameters.AddWithValue("@p1", cmbPosition.Text);
-            SqlDataReader dr = command.ExecuteReader();
-            while (dr.Read())
-            {
-                id = Convert.ToInt32(dr[0]);
-            }
-            command = new SqlCommand("Update Staffs set PositionId = " + id.ToString(), bgl.baglanti()); ;
-
-
-            
+            cmbDoktor.Text = "";
             cmbDoktor.Items.Clear();
             SqlCommand komut3 = new SqlCommand("Select DoktorAd,DoktorSoyad from Tbl_Doktorlar where DoktorBrans = @p1", bgl.baglanti());
             komut3.Parameters.AddWithValue("p1", cmbBrans.Text);
@@ -114,8 +122,18 @@ namespace Proje_Hastane
         {
             frmRandevuListesi frm = new frmRandevuListesi();
             frm.Show();
+            //this.Hide();
         }
 
-   
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("update Tbl_Randevular set ");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmDuyurular frm = new frmDuyurular();
+            frm.Show();
+        }
     }
 }

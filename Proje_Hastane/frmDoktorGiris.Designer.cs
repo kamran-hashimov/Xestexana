@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoktorGiris));
             this.btnGirisYap = new System.Windows.Forms.Button();
             this.lnkUyeOl = new System.Windows.Forms.LinkLabel();
             this.mstxtKimlikNo = new System.Windows.Forms.MaskedTextBox();
@@ -42,9 +43,10 @@
             this.btnGirisYap.Location = new System.Drawing.Point(138, 148);
             this.btnGirisYap.Name = "btnGirisYap";
             this.btnGirisYap.Size = new System.Drawing.Size(77, 33);
-            this.btnGirisYap.TabIndex = 13;
+            this.btnGirisYap.TabIndex = 3;
             this.btnGirisYap.Text = "Giris yap";
             this.btnGirisYap.UseVisualStyleBackColor = true;
+            this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
             // lnkUyeOl
             // 
@@ -53,7 +55,7 @@
             this.lnkUyeOl.Location = new System.Drawing.Point(238, 124);
             this.lnkUyeOl.Name = "lnkUyeOl";
             this.lnkUyeOl.Size = new System.Drawing.Size(42, 15);
-            this.lnkUyeOl.TabIndex = 12;
+            this.lnkUyeOl.TabIndex = 4;
             this.lnkUyeOl.TabStop = true;
             this.lnkUyeOl.Text = "Uye ol";
             // 
@@ -63,14 +65,15 @@
             this.mstxtKimlikNo.Mask = "00000000000";
             this.mstxtKimlikNo.Name = "mstxtKimlikNo";
             this.mstxtKimlikNo.Size = new System.Drawing.Size(100, 20);
-            this.mstxtKimlikNo.TabIndex = 11;
+            this.mstxtKimlikNo.TabIndex = 1;
             // 
             // txtSifre
             // 
             this.txtSifre.Location = new System.Drawing.Point(115, 122);
             this.txtSifre.Name = "txtSifre";
+            this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(100, 20);
-            this.txtSifre.TabIndex = 10;
+            this.txtSifre.TabIndex = 2;
             // 
             // label3
             // 
@@ -104,8 +107,10 @@
             // 
             // frmDoktorGiris
             // 
+            this.AcceptButton = this.btnGirisYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(336, 197);
             this.Controls.Add(this.btnGirisYap);
@@ -115,8 +120,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDoktorGiris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoktorGiris";
             this.ResumeLayout(false);
             this.PerformLayout();

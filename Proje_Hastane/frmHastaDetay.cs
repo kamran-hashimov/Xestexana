@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 namespace Proje_Hastane
 {
 
+
+
     public partial class frmHastaDetay : Form
     {
         public frmHastaDetay()
@@ -18,14 +20,13 @@ namespace Proje_Hastane
         private void frmHastaDetay_Load(object sender, EventArgs e)
         {
             lblTcNo.Text = TC;
-            
-
-            SqlCommand komut = new SqlCommand("Select HastaAd,HastaSoyad from Tbl_Hastalar where HastaTc = @p1", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select HastaAd,HastaSoyad,HastaTelefon from Tbl_Hastalar where HastaTc = @p1", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", lblTcNo.Text);
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 lblAdSoyad.Text = dr[0] + " " + dr[1];
+                lblTel.Text = dr[2].ToString();
             }
             bgl.baglanti().Close();
 
@@ -50,6 +51,7 @@ namespace Proje_Hastane
 
         private void cmbBrans_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbDoktor.Text = "";
             cmbDoktor.Items.Clear();
             SqlCommand komut3 = new SqlCommand("Select DoktorAd,DoktorSoyad from Tbl_Doktorlar where DoktorBrans = @p1", bgl.baglanti());
             komut3.Parameters.AddWithValue("@p1", cmbBrans.Text);
@@ -58,12 +60,13 @@ namespace Proje_Hastane
             {
                 cmbDoktor.Items.Add(dr3[0] + " " + dr3[1]);
             }
+            bgl.baglanti().Close();
         }
 
         private void cmbDoktor_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("Select * from Tbl_Randevular where RandevuBrans = '" + cmbBrans.Text + "'", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("Select * from Tbl_Randevular where RandevuBrans = '" + cmbBrans.Text + "' and RandevuDoktor = '" + cmbDoktor.Text +"' and RandevuDurum = 0", bgl.baglanti());
             da.Fill(dt);
             dataGridView2.DataSource = dt;
         }
@@ -74,5 +77,25 @@ namespace Proje_Hastane
             fr.TCno = lblTcNo.Text;
             fr.Show();
         }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView2.SelectedCells[0].RowIndex;
+            txtId.Text = dataGridView2.Rows[secilen].Cells[0].Value.ToString();
+        }
+
+        private void btnRandevuAl_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Update Tbl_Randevular set RandevuDurum = 1,HastaTc = @p1,HastaSikayet = @p2 where RandevuId = @p3", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", lblTcNo.Text);
+            komut.Parameters.AddWithValue("@p2", rchSikayet.Text);
+            komut.Parameters.AddWithValue("@p3", txtId.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Randevu alindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+        }
+
+      
     }
 }

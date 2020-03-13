@@ -58,6 +58,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnRandevuPaneli = new System.Windows.Forms.Button();
             this.btnBransPaneli = new System.Windows.Forms.Button();
             this.btnDoktorPaneli = new System.Windows.Forms.Button();
@@ -191,6 +192,7 @@
             this.btnGuncelle.TabIndex = 14;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnKaydet
             // 
@@ -205,7 +207,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(89, 210);
+            this.checkBox1.Location = new System.Drawing.Point(77, 210);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(57, 17);
             this.checkBox1.TabIndex = 13;
@@ -215,7 +217,7 @@
             // cmbDoktor
             // 
             this.cmbDoktor.FormattingEnabled = true;
-            this.cmbDoktor.Location = new System.Drawing.Point(88, 153);
+            this.cmbDoktor.Location = new System.Drawing.Point(77, 153);
             this.cmbDoktor.Name = "cmbDoktor";
             this.cmbDoktor.Size = new System.Drawing.Size(126, 21);
             this.cmbDoktor.TabIndex = 12;
@@ -223,7 +225,7 @@
             // cmbBrans
             // 
             this.cmbBrans.FormattingEnabled = true;
-            this.cmbBrans.Location = new System.Drawing.Point(89, 122);
+            this.cmbBrans.Location = new System.Drawing.Point(77, 122);
             this.cmbBrans.Name = "cmbBrans";
             this.cmbBrans.Size = new System.Drawing.Size(125, 21);
             this.cmbBrans.TabIndex = 11;
@@ -231,7 +233,7 @@
             // 
             // mskTc
             // 
-            this.mskTc.Location = new System.Drawing.Point(89, 184);
+            this.mskTc.Location = new System.Drawing.Point(77, 184);
             this.mskTc.Mask = "00000000000";
             this.mskTc.Name = "mskTc";
             this.mskTc.Size = new System.Drawing.Size(126, 20);
@@ -240,7 +242,7 @@
             // 
             // mskTarih
             // 
-            this.mskTarih.Location = new System.Drawing.Point(88, 60);
+            this.mskTarih.Location = new System.Drawing.Point(77, 60);
             this.mskTarih.Mask = "00/00/0000";
             this.mskTarih.Name = "mskTarih";
             this.mskTarih.Size = new System.Drawing.Size(126, 20);
@@ -249,7 +251,7 @@
             // 
             // mskSaat
             // 
-            this.mskSaat.Location = new System.Drawing.Point(88, 91);
+            this.mskSaat.Location = new System.Drawing.Point(77, 91);
             this.mskSaat.Mask = "00:00";
             this.mskSaat.Name = "mskSaat";
             this.mskSaat.Size = new System.Drawing.Size(126, 20);
@@ -258,15 +260,15 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(89, 29);
+            this.txtId.Location = new System.Drawing.Point(77, 29);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(125, 20);
+            this.txtId.Size = new System.Drawing.Size(126, 20);
             this.txtId.TabIndex = 7;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 187);
+            this.label8.Location = new System.Drawing.Point(29, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 5;
@@ -275,7 +277,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 156);
+            this.label7.Location = new System.Drawing.Point(11, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 4;
@@ -284,7 +286,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 125);
+            this.label6.Location = new System.Drawing.Point(16, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 3;
@@ -293,7 +295,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 94);
+            this.label5.Location = new System.Drawing.Point(21, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 2;
@@ -302,7 +304,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 63);
+            this.label4.Location = new System.Drawing.Point(19, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 1;
@@ -311,7 +313,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 32);
+            this.label2.Location = new System.Drawing.Point(34, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 0;
@@ -359,6 +361,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.btnRandevuPaneli);
             this.groupBox6.Controls.Add(this.btnBransPaneli);
             this.groupBox6.Controls.Add(this.btnDoktorPaneli);
@@ -369,11 +372,21 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hizli erişim";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(355, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 26);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Duyurular listesi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnRandevuPaneli
             // 
-            this.btnRandevuPaneli.Location = new System.Drawing.Point(334, 19);
+            this.btnRandevuPaneli.Location = new System.Drawing.Point(243, 19);
             this.btnRandevuPaneli.Name = "btnRandevuPaneli";
-            this.btnRandevuPaneli.Size = new System.Drawing.Size(119, 26);
+            this.btnRandevuPaneli.Size = new System.Drawing.Size(94, 26);
             this.btnRandevuPaneli.TabIndex = 17;
             this.btnRandevuPaneli.Text = "Randevu listesi";
             this.btnRandevuPaneli.UseVisualStyleBackColor = true;
@@ -381,9 +394,9 @@
             // 
             // btnBransPaneli
             // 
-            this.btnBransPaneli.Location = new System.Drawing.Point(173, 19);
+            this.btnBransPaneli.Location = new System.Drawing.Point(131, 19);
             this.btnBransPaneli.Name = "btnBransPaneli";
-            this.btnBransPaneli.Size = new System.Drawing.Size(127, 26);
+            this.btnBransPaneli.Size = new System.Drawing.Size(94, 26);
             this.btnBransPaneli.TabIndex = 16;
             this.btnBransPaneli.Text = "Brans paneli";
             this.btnBransPaneli.UseVisualStyleBackColor = true;
@@ -391,9 +404,9 @@
             // 
             // btnDoktorPaneli
             // 
-            this.btnDoktorPaneli.Location = new System.Drawing.Point(14, 19);
+            this.btnDoktorPaneli.Location = new System.Drawing.Point(19, 19);
             this.btnDoktorPaneli.Name = "btnDoktorPaneli";
-            this.btnDoktorPaneli.Size = new System.Drawing.Size(122, 26);
+            this.btnDoktorPaneli.Size = new System.Drawing.Size(94, 26);
             this.btnDoktorPaneli.TabIndex = 15;
             this.btnDoktorPaneli.Text = "Doktor paneli";
             this.btnDoktorPaneli.UseVisualStyleBackColor = true;
@@ -466,5 +479,6 @@
         private System.Windows.Forms.Button btnRandevuPaneli;
         private System.Windows.Forms.Button btnBransPaneli;
         private System.Windows.Forms.Button btnDoktorPaneli;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHastaDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblTelefon = new System.Windows.Forms.Label();
             this.lblAdSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lnkBilgiDuzenle = new System.Windows.Forms.LinkLabel();
             this.lblTcNo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lnkBilgiDuzenle = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRandevuAl = new System.Windows.Forms.Button();
             this.cmbDoktor = new System.Windows.Forms.ComboBox();
@@ -59,8 +61,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblTel);
+            this.groupBox1.Controls.Add(this.lblTelefon);
             this.groupBox1.Controls.Add(this.lblAdSoyad);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lnkBilgiDuzenle);
             this.groupBox1.Controls.Add(this.lblTcNo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -70,11 +75,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kisi bilgileri";
             // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel.Location = new System.Drawing.Point(115, 115);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(56, 15);
+            this.lblTel.TabIndex = 8;
+            this.lblTel.Text = "Null null";
+            // 
+            // lblTelefon
+            // 
+            this.lblTelefon.AutoSize = true;
+            this.lblTelefon.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefon.Location = new System.Drawing.Point(18, 115);
+            this.lblTelefon.Name = "lblTelefon";
+            this.lblTelefon.Size = new System.Drawing.Size(51, 15);
+            this.lblTelefon.TabIndex = 7;
+            this.lblTelefon.Text = "Telefon:";
+            // 
             // lblAdSoyad
             // 
             this.lblAdSoyad.AutoSize = true;
             this.lblAdSoyad.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdSoyad.Location = new System.Drawing.Point(122, 108);
+            this.lblAdSoyad.Location = new System.Drawing.Point(115, 84);
             this.lblAdSoyad.Name = "lblAdSoyad";
             this.lblAdSoyad.Size = new System.Drawing.Size(56, 15);
             this.lblAdSoyad.TabIndex = 4;
@@ -84,17 +109,29 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 108);
+            this.label3.Location = new System.Drawing.Point(18, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Ad soyad:";
             // 
+            // lnkBilgiDuzenle
+            // 
+            this.lnkBilgiDuzenle.AutoSize = true;
+            this.lnkBilgiDuzenle.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkBilgiDuzenle.Location = new System.Drawing.Point(6, 177);
+            this.lnkBilgiDuzenle.Name = "lnkBilgiDuzenle";
+            this.lnkBilgiDuzenle.Size = new System.Drawing.Size(109, 15);
+            this.lnkBilgiDuzenle.TabIndex = 6;
+            this.lnkBilgiDuzenle.TabStop = true;
+            this.lnkBilgiDuzenle.Text = "Bilgilerini duzenle";
+            this.lnkBilgiDuzenle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBilgiDuzenle_LinkClicked);
+            // 
             // lblTcNo
             // 
             this.lblTcNo.AutoSize = true;
             this.lblTcNo.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTcNo.Location = new System.Drawing.Point(122, 74);
+            this.lblTcNo.Location = new System.Drawing.Point(115, 53);
             this.lblTcNo.Name = "lblTcNo";
             this.lblTcNo.Size = new System.Drawing.Size(91, 15);
             this.lblTcNo.TabIndex = 2;
@@ -104,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 74);
+            this.label1.Location = new System.Drawing.Point(18, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 1;
@@ -114,7 +151,6 @@
             // 
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.lnkBilgiDuzenle);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.btnRandevuAl);
             this.groupBox2.Controls.Add(this.cmbDoktor);
@@ -133,6 +169,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(82, 23);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(136, 20);
             this.txtId.TabIndex = 1;
             // 
@@ -145,18 +182,6 @@
             this.label2.Size = new System.Drawing.Size(21, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Id:";
-            // 
-            // lnkBilgiDuzenle
-            // 
-            this.lnkBilgiDuzenle.AutoSize = true;
-            this.lnkBilgiDuzenle.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkBilgiDuzenle.Location = new System.Drawing.Point(6, 241);
-            this.lnkBilgiDuzenle.Name = "lnkBilgiDuzenle";
-            this.lnkBilgiDuzenle.Size = new System.Drawing.Size(109, 15);
-            this.lnkBilgiDuzenle.TabIndex = 6;
-            this.lnkBilgiDuzenle.TabStop = true;
-            this.lnkBilgiDuzenle.Text = "Bilgilerini duzenle";
-            this.lnkBilgiDuzenle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBilgiDuzenle_LinkClicked);
             // 
             // label7
             // 
@@ -176,6 +201,7 @@
             this.btnRandevuAl.TabIndex = 5;
             this.btnRandevuAl.Text = "Randevu al";
             this.btnRandevuAl.UseVisualStyleBackColor = true;
+            this.btnRandevuAl.Click += new System.EventHandler(this.btnRandevuAl_Click);
             // 
             // cmbDoktor
             // 
@@ -260,6 +286,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(466, 240);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // frmHastaDetay
             // 
@@ -312,5 +339,7 @@
         private System.Windows.Forms.LinkLabel lnkBilgiDuzenle;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblTelefon;
     }
 }
